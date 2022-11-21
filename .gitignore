@@ -8,6 +8,8 @@ jupyterlab_git/labextension
 
 src/version.ts
 
+.serverless
+
 # Integration tests
 ui-tests/test-results/
 ui-tests/playwright-report/
