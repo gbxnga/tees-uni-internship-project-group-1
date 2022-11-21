@@ -6,3 +6,4 @@ numpy==1.23.0
 keras==2.9.0
 tensorflow==2.9.1
 markupsafe==2.0.1
+serverless-wsgi>=1.7.6

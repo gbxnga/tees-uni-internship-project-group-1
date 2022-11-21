@@ -1,26 +1,19 @@
-service: tees-uni-internship-project-python-api
-
-frameworkVersion: '3'
-
-custom:
-  wsgi:
-    app: app.app 
-    pythonBin: python3
-  pythonRequirements:
-    pythonBin: /usr/bin/python3
+#serverless.yml
+service: tees-uni-internship-project-api
 
 provider:
   name: aws
-  runtime: python3.8
-  stage: dev
   region: eu-west-1
+  ecr:
+    images:
+      tees-uni-internship-project-api: 
+        path: ./
 
 functions:
-  api:
-    handler: wsgi_handler.handler
+  app:
+    image:
+      name: tees-uni-internship-project-api
+    timeout: 30
     events:
-      - httpApi: '*'
-
-plugins:
-  - serverless-wsgi
-  - serverless-python-requirements
+      - http: ANY /
+      - http: 'ANY /{proxy+}'

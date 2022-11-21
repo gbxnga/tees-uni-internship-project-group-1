@@ -6,6 +6,7 @@ import joblib
 import json
 import pandas as pd
 import numpy as np
+import serverless_wsgi
 
 
 @app.route("/")
@@ -55,3 +56,7 @@ def hello():
 @app.errorhandler(404)
 def resource_not_found(e):
     return make_response(jsonify(error='Not found!'), 404)
+
+
+def handler(event, context):
+    return serverless_wsgi.handle_request(app, event, context)
