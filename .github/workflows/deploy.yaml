@@ -34,12 +34,12 @@ jobs:
     - name: Login to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
-      
+
     - name: deploy to serverless 
       run: | 
         cd api
         npm install 
-        node_modules/serverless/bin/serverless.js deploy 
+        node_modules/serverless/bin/serverless.js deploy --config serverless-docker.yaml
       env:
         CI: true
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
