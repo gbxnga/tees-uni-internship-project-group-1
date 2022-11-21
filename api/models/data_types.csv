@@ -1,0 +1,8 @@
+index,0
+day,int64
+month,int64
+Cardnum_minmax,float64
+Merchnum_log,float64
+Merch description_log,float64
+Merch state_log,float64
+amount_log,float64

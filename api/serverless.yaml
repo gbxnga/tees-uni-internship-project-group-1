@@ -5,6 +5,7 @@ frameworkVersion: '3'
 custom:
   wsgi:
     app: app.app 
+    pythonBin: python3
   pythonRequirements:
     pythonBin: /usr/bin/python3
 
