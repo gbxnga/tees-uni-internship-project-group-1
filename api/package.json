@@ -9,6 +9,6 @@
   },
 
   "dependencies": {
-    "serverless": "^2.72.3"
+    "serverless": "3.1.1"
   }
 }
