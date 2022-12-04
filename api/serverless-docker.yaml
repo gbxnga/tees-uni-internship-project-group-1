@@ -18,10 +18,10 @@ functions:
     timeout: 30
     events:
       - http: 
-          method: "*" 
+          method: "ANY" 
           path: "/"
           cors: true
       - http: 
-          method: "*" 
+          method: "ANY" 
           path: '/{proxy+}'
           cors: true
