@@ -17,5 +17,11 @@ functions:
       name: tees-uni-internship-project-api
     timeout: 30
     events:
-      - http: ANY /
-      - http: 'ANY /{proxy+}'
+      - http: 
+          method: "*" 
+          path: "/"
+          cors: true
+      - http: 
+          method: "*" 
+          path: '/{proxy+}'
+          cors: true
