@@ -21,7 +21,15 @@ functions:
           method: "ANY" 
           path: "/"
           cors: true
+          response:
+            headers:
+              Access-Control-Allow-Origin: "'*'" 
+              Access-Control-Allow-Headers:  "'*'"
       - http: 
           method: "ANY" 
           path: '/{proxy+}'
           cors: true
+          response:
+            headers:
+              Access-Control-Allow-Origin: "'*'" 
+              Access-Control-Allow-Headers:  "'*'"
