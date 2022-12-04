@@ -4,6 +4,8 @@ service: tees-uni-internship-project-api
 provider:
   name: aws
   region: eu-west-1
+  httpApi:
+    cors: true
   ecr:
     images:
       tees-uni-internship-project-api: 
