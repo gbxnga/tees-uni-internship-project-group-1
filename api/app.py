@@ -152,7 +152,10 @@ def hello():
         success = False
         message = "Transaction Failed. Suspected fraud"
     
-    return jsonify(success=success, is_fraud=is_fraud, message=message, prediction=prediction.tolist())
+    response = jsonify(success=success, is_fraud=is_fraud, message=message, prediction=prediction.tolist())
+    response.headers.add("Access-Control-Allow-Origin","*")
+    response.headers.add("Access-Control-Allow-Headers","*")
+    return response
 
 
 @app.errorhandler(404)
